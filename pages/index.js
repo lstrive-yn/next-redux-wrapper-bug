@@ -15,14 +15,11 @@ const Index = () => {
   return <Page title="Index Page" linkTo="/other" NavigateTo="Other Page" />
 }
 
-export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  store.dispatch(tickClock(false))
-
-  if (!store.getState().placeholderData) {
+export const getServerSideProps = wrapper.getServerSideProps(async ({ store }) => {
+  // if (!store.getState().placeholderData) {
     store.dispatch(loadData())
     store.dispatch(END)
-  }
-
+  // }
   await store.sagaTask.toPromise()
 })
 

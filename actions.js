@@ -8,6 +8,8 @@ export const actionTypes = {
   START_CLOCK: 'START_CLOCK',
   TICK_CLOCK: 'TICK_CLOCK',
   HYDRATE: 'HYDRATE',
+  LOAD_OTHER: 'LOAD_OTHER',
+  SAVE_OTHER: 'SAVE_OTHER'
 }
 
 export function failure(error) {
@@ -27,10 +29,14 @@ export function decrement() {
 
 export function reset() {
   return { type: actionTypes.RESET }
-}
+}    
 
 export function loadData() {
   return { type: actionTypes.LOAD_DATA }
+}
+
+export function loadOther() {
+  return { type: actionTypes.LOAD_OTHER }
 }
 
 export function loadDataSuccess(data) {
